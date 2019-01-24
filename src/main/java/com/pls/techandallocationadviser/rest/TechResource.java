@@ -26,4 +26,11 @@ public class TechResource {
 			TechRequest techRequest){
 		return new ResponseEntity<>(new TechResponse(), HttpStatus.CREATED);
 	}
+	
+	@RequestMapping(path = "", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_UTF8_VALUE,
+			consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public ResponseEntity<TechResponse> updateReservation(
+			TechRequest reservationRequest){
+		return new ResponseEntity<>(new TechResponse(), HttpStatus.OK);
+	}
 }
