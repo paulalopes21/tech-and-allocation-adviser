@@ -1,8 +1,9 @@
-package com.pls.techandallocationadviser.model.response;
+package com.pls.techandallocationadviser.model.request;
 
 import com.pls.techandallocationadviser.model.Techs;
 
-public class TechResponse {
+public class TechRequest {
+	
 	private Long idAdviser;
 	private String name;
 	private String about;
@@ -10,6 +11,25 @@ public class TechResponse {
 	private String email;
 	private Techs techs;
 	private boolean available;
+	
+	
+	
+	
+	public TechRequest() {
+		super();
+	}
+
+	public TechRequest(Long idAdviser, String name, String about, String phone, String email, Techs techs,
+			boolean available) {
+		super();
+		this.idAdviser = idAdviser;
+		this.name = name;
+		this.about = about;
+		this.phone = phone;
+		this.email = email;
+		this.techs = techs;
+		this.available = available;
+	}
 	
 	public Long getIdAdviser() {
 		return idAdviser;
@@ -53,20 +73,6 @@ public class TechResponse {
 	public void setAvailable(boolean available) {
 		this.available = available;
 	}
-	public TechResponse(String name, String about, String phone, String email, Techs techs, boolean available) {
-		super();
-		this.name = name;
-		this.about = about;
-		this.phone = phone;
-		this.email = email;
-		this.techs = techs;
-		this.available = available;
-	}
-	public TechResponse() {
-		super();
-	}
 	
 	
-	
-
 }

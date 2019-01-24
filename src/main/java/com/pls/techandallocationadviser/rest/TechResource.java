@@ -3,10 +3,12 @@ package com.pls.techandallocationadviser.rest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.pls.techandallocationadviser.model.request.TechRequest;
 import com.pls.techandallocationadviser.model.response.TechResponse;
 
 @RestController
@@ -17,5 +19,11 @@ public class TechResource {
 	public ResponseEntity<TechResponse> getTechResponse() {
 		return new ResponseEntity<>(new TechResponse(), HttpStatus.OK);
 	}
-
+	
+	@RequestMapping(path = "", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE,
+			consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
+	public ResponseEntity<TechResponse> createReservation(
+			TechRequest techRequest){
+		return new ResponseEntity<>(new TechResponse(), HttpStatus.CREATED);
+	}
 }
