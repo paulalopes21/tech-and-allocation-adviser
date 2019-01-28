@@ -3,7 +3,7 @@ package com.pls.techandallocationadviser.rest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,5 +32,12 @@ public class TechResource {
 	public ResponseEntity<TechResponse> updateReservation(
 			TechRequest reservationRequest){
 		return new ResponseEntity<>(new TechResponse(), HttpStatus.OK);
+	}
+	
+	@RequestMapping(path = "/{adviserId}", method = RequestMethod.DELETE)
+	public ResponseEntity<Void> deleteReservation(
+			@PathVariable
+			long adviserId){
+		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
 }
